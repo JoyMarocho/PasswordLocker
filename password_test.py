@@ -67,3 +67,35 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(self.new_credentials.account_username,"thePhi")
         self.assertEqual(self.new_credentials.account_password,"Monsq!h!997")
 
+def test_save_credentials(self):
+        '''
+        test_save_credentials test case to test if the credentials object is saved into credentials_list object.
+        '''
+
+        self.new_credentials.save_credentials() #saving new credentials
+        self.assertEqual(len(Credentials.credentials_list),1)
+
+
+    def test_save_multiple_credentials(self):
+        '''
+        test_save_credentials test case to establish if multiple credentials objects can be saved into the credentials_list object.
+        '''
+
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("Facebook","Kata-naah", "n@4HK@t4")
+        test_credentials.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list),2)
+
+
+    def test_delete_credentials(self):
+        '''
+        test_delete_credentials to check if a user can remove a credential from the credentials_list.
+        '''
+        
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("Instagram", "Toshphi", "t0sHpH!") #new credential
+        test_credentials.save_credentials()
+
+        self.new_credentials.delete_credentials() #Deleting a credentials object
+        self.assertEqual(len(Credentials.credentials_list),1)
+
