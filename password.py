@@ -74,3 +74,27 @@ def save_credentials(self):
 
     @classmethod
     def credentials_exist(cls,account_name):
+        '''
+        Method checks if a credentials object exists from the credentials_list.
+
+        Args:
+            account_name: Account name to search for.
+
+        Returns:
+            Boolean: True or false depending if the credential exists.
+        '''
+
+        for credentials in cls.credentials_list:
+            if credentials.account_name == account_name:
+                return True
+
+
+    @classmethod
+    def display_credentials(cls):
+        '''
+        Method returns the entire credentials list
+        '''
+
+        return cls.credentials_list
+
+        pass
