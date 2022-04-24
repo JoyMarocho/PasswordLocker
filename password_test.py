@@ -99,3 +99,39 @@ def test_save_credentials(self):
         self.new_credentials.delete_credentials() #Deleting a credentials object
         self.assertEqual(len(Credentials.credentials_list),1)
 
+def test_find_credentials_by_account_name(self):
+        '''
+        Test to check if a user can find a credential by account_name and display the corresponding information.
+        '''
+
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("Facebook", "Kata-naah", "n@4HK@t4")
+        test_credentials.save_credentials()
+
+        found_credentials = Credentials.find_credentials_by_account_name("Facebook") #new credential
+        self.assertEqual(found_credentials.account_name, test_credentials.account_name)
+
+
+    def test_credentials_exist(self):
+        '''
+        Test to check if the application can return a Boolean if a user cannot find a credential.
+        '''
+
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("Facebook", "Kata-naah", "n@4HK@t4") #new credential
+        test_credentials.save_credentials()
+
+        credentials_exist = Credentials.credentials_exist("Facebook")
+        self.assertTrue(credentials_exist)
+
+
+    def test_display_all_credentials(self):
+        '''
+        Test to check if the application can display all saved credentials.
+        '''
+
+        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
+
+
+if __name__ == '__main__':
+    unittest.main()
