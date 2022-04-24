@@ -45,4 +45,32 @@ def save_credentials(self):
         save_credentials method enables the saving of existing account credentials objects into credentials_list.
         '''
 
-    
+    Credentials.credentials_list.append(self)
+
+
+    def delete_credentials(self):
+        '''
+        delete_credentials method allows user to delete saved credentials from the credentials_list
+        '''
+
+        Credentials.credentials_list.remove(self)
+
+ @classmethod
+    def find_credentials_by_account_name(cls,account_name):
+        '''
+        Method that takes in a number and returns a credential that matches that account's_name.
+
+        Args:
+            account_name: Account name to search for.
+
+        Returns:
+            Credentials of an account tat matches the account_name. 
+        '''
+
+        for credentials in cls.credentials_list:
+            if credentials.account_name == account_name:
+                return credentials
+
+
+    @classmethod
+    def credentials_exist(cls,account_name):
