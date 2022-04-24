@@ -19,4 +19,26 @@ class TestUser(unittest.TestCase):
 
 
     def tearDown(self):
-        
+         '''
+        tearDown method that cleans up after each test case has run to avoid repitition of input. 
+        '''
+
+        User.user_list = []
+
+
+    def test_init (self):
+        '''
+        test init test case to test the proper initialization of user and credentials objects.
+        '''
+
+        self.assertEqual(self.new_user.username,"Monsqih")
+        self.assertEqual(self.new_user.password,"monsq!H!997")
+
+
+class TestCredentials(unittest.TestCase):
+    '''
+    Test class that defines test cases for the Credentials class behaviours.
+
+    Args:
+        unittest.TestCase: TestCase class that aids in creating test cases.
+    '''
