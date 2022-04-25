@@ -128,3 +128,27 @@ def main():
             else:
                 print("Those credentials don't exist")
 
+
+ elif short_code == 'dlc':
+            print("Enter the account name you want to delete")
+
+            search_account_name = input()
+            if check_existing_credentials(search_account_name):
+                search_credentials = find_credential(search_account_name)
+                delete_credentials(search_credentials)
+                print(f"The credentials for {search_credentials.account_name} has been deleted!")
+
+            else:
+                print("The credential with that account name does not exist")
+
+
+        elif short_code == 'ex':
+            print("Thanks for choosing PasswordManager!")
+            break
+
+        else: 
+            print("PasswordManager really did not get that. Please use the short codes")
+
+
+if __name__ == '__main__':
+    main()
