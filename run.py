@@ -64,3 +64,37 @@ def display_credentials():
     '''
     return Credentials.display_credentials()
 
+#Function to call the other functions
+def main():
+    print("Hello, Welcome to your Password Manager. Kindly input your username and password")
+    username = input()
+
+    print(f"Hello {username}. What would you like to do?")
+    print('/n')
+
+    while True:
+        print("Use these short codes: cc - create new credentials, dc - display credentials, dlc - delete existing credentials, fc - find credentials, ex -exit the credentials list ")
+
+        short_code = input().lower()
+
+        if short_code == 'cc':
+            print("New Credential")
+            print("-"*20)
+
+            print("Account name .......")
+            a_name = input()
+
+            print("Account Username .....")
+            a_username = input()
+
+            print("Account Password .....")
+            a_password = input()
+
+
+            save_credentials(create_credentials(a_name, a_username, a_password)) #Create and save new credentials
+            print('/n')
+            print(f"New Credential {a_name} {a_username} {a_password} created")
+            print('/n')
+
+
+        elif short_code == 'dc':
