@@ -98,3 +98,33 @@ def main():
 
 
         elif short_code == 'dc':
+            
+            if display_credentials():
+                print("Here is a list of all your credentials")
+                print('/n')
+
+                for credentials in display_credentials():
+                    print(f"{credentials.account_name} {credentials.account_username} {credentials.account_password}")
+                    print('/n')
+
+            else:
+
+                print('/n')
+                print("Password Manager does not contain any saved credentials")
+                print('/n')
+
+        elif short_code == 'fc':
+            print("Enter the account name you want to search for")
+
+            search_account_name = input()
+            if check_existing_credentials(search_account_name):
+                search_credentials = find_credential(search_account_name)
+                print(f"{search_credentials.account_name}")
+                print('-'*20)
+
+                print(f"Account Username ....... {search_credentials.account_username}")
+                print(f"Account Password ....... {search_credentials.account_password}")
+
+            else:
+                print("Those credentials don't exist")
+
