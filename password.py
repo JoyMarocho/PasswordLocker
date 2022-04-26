@@ -1,5 +1,5 @@
 class User:
-   '''
+    '''
     Class that generates new instances of users
     '''
 
@@ -55,8 +55,8 @@ def save_credentials(self):
 
         Credentials.credentials_list.remove(self)
 
- @classmethod
-    def find_credentials_by_account_name(cls,account_name):
+@classmethod
+def find_credentials_by_account_name(cls,account_name):
         '''
         Method that takes in a number and returns a credential that matches that account's_name.
 
@@ -71,9 +71,8 @@ def save_credentials(self):
             if credentials.account_name == account_name:
                 return credentials
 
-
-    @classmethod
-    def credentials_exist(cls,account_name):
+@classmethod
+def credentials_exist(cls,account_name):
         '''
         Method checks if a credentials object exists from the credentials_list.
 
@@ -89,8 +88,8 @@ def save_credentials(self):
                 return True
 
 
-    @classmethod
-    def display_credentials(cls):
+@classmethod
+def display_credentials(cls):
         '''
         Method returns the entire credentials list
         '''

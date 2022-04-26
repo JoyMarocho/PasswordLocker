@@ -31,7 +31,7 @@ def save_credentials(credentials):
     credentials.save_credentials()
     
     
-  #Delete credentials
+#Delete credentials
 def delete_credentials(credentials):
     '''
     Function to delete credentials.
@@ -47,9 +47,8 @@ def find_credential(aname):
     '''
 
     return Credentials.find_credentials_by_account_name(aname)
-  
-  
-  #Checking if credentials exist
+
+#Checking if credentials exist
 def check_existing_credentials(aname):
     '''
     Function that allows users to check if credentials exist with the account name and return a Boolean.
@@ -129,7 +128,7 @@ def main():
                 print("Those credentials don't exist")
 
 
- elif short_code == 'dlc':
+elif short_code == 'dlc':
             print("Enter the account name you want to delete")
 
             search_account_name = input()

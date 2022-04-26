@@ -19,7 +19,7 @@ class TestUser(unittest.TestCase):
 
 
     def tearDown(self):
-         '''
+        '''
         tearDown method that cleans up after each test case has run to avoid repitition of input. 
         '''
 
@@ -76,7 +76,7 @@ def test_save_credentials(self):
         self.assertEqual(len(Credentials.credentials_list),1)
 
 
-    def test_save_multiple_credentials(self):
+def test_save_multiple_credentials(self):
         '''
         test_save_credentials test case to establish if multiple credentials objects can be saved into the credentials_list object.
         '''
@@ -87,7 +87,7 @@ def test_save_credentials(self):
         self.assertEqual(len(Credentials.credentials_list),2)
 
 
-    def test_delete_credentials(self):
+def test_delete_credentials(self):
         '''
         test_delete_credentials to check if a user can remove a credential from the credentials_list.
         '''
@@ -112,7 +112,7 @@ def test_find_credentials_by_account_name(self):
         self.assertEqual(found_credentials.account_name, test_credentials.account_name)
 
 
-    def test_credentials_exist(self):
+def test_credentials_exist(self):
         '''
         Test to check if the application can return a Boolean if a user cannot find a credential.
         '''
@@ -125,7 +125,7 @@ def test_find_credentials_by_account_name(self):
         self.assertTrue(credentials_exist)
 
 
-    def test_display_all_credentials(self):
+def test_display_all_credentials(self):
         '''
         Test to check if the application can display all saved credentials.
         '''
