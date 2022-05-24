@@ -128,7 +128,7 @@ def main():
                 print("Those credentials don't exist")
 
 
-elif short_code == 'dlc':
+        elif short_code == 'dlc':
             print("Enter the account name you want to delete")
 
             search_account_name = input()
